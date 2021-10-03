@@ -3,7 +3,7 @@ import './Form.css'
 import useSelect from '../hooks/useSelect'
 import useCountry from '../hooks/useCountry'
 
-const Form =({setCategoría})=> {
+const Form =({setCategoría, setPais})=> {
     //utilizamos custom hook
      
      const OPCIONES = [
@@ -31,11 +31,9 @@ const Form =({setCategoría})=> {
 
      const handleChange =e=>{
          e.preventDefault();
-         console.log(categoria)
-         console.log(pais)
          //pasamos categoría a app.js
          setCategoría(categoria)
-         SelectPais(pais)
+         setPais(pais)
      }
 
     return (
