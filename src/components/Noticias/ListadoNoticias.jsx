@@ -3,7 +3,7 @@ import Noticia from './Noticia';
 
 
 const ListadoNoticias = ({noticias}) =>
-    console.log(noticias)
+  
 ( 
         <div className="row">
             {noticias.map(noticia => (
