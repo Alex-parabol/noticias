@@ -1,10 +1,9 @@
-import React from 'react';
-import Noticia from './Noticia';
+import React from 'react'
+import Noticia from './Noticia'
 
+export default function ListadoNoticias({noticias}) {
 
-const ListadoNoticias = ({noticias}) =>
-  
-( 
+    return (
         <div className="row">
             {noticias.map(noticia => (
                 <Noticia 
@@ -12,9 +11,7 @@ const ListadoNoticias = ({noticias}) =>
                     noticia={noticia}
                 />
             ))}
+            
         </div>
-);
-
-
- 
-export default ListadoNoticias;
+    )
+}

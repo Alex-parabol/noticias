@@ -12,6 +12,7 @@ function App() {
   const [ pais, setPais ] = useState('')
   const [ noticias, setNoticias ] = useState([])
 
+  console.log(noticias)
  
 
 /*   useEffect(()=> {
@@ -34,10 +35,11 @@ function App() {
       const respuesta = await fetch(url);
       const noticias = await respuesta.json()
       setNoticias(noticias.articles)
+      console.log(noticias.articles)
     }
     consultarAPI()
   }, [categoria, pais])
-  console.log(noticias)
+  
   return (
     <Fragment>
     <Header titulo='Buscador de Noticias' />
