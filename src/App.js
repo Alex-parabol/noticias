@@ -11,8 +11,6 @@ function App() {
   const [categoria, setCategoria ] = useState('')
   const [ pais, setPais ] = useState('')
   const [ noticias, setNoticias ] = useState([])
-
-  console.log(noticias)
  
 
 /*   useEffect(()=> {
