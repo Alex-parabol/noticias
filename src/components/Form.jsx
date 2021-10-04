@@ -35,7 +35,9 @@ const Form =({setCategoría, setPais})=> {
          setCategoría(categoria)
          setPais(pais)
      }
-
+     
+     setCategoría(categoria)
+     setPais(pais)
     return (
         <div className='buscador'>
             <div className="col s12 m8 offset-m2">

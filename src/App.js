@@ -2,6 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react'
 import Header from './components/header'
 import Form from './components/Form'
 import axios from 'axios'
+import ListadoNoticias from './components/Noticias/ListadoNoticias'
 
 function App() {
 
@@ -13,30 +14,30 @@ function App() {
 
  
 
-  useEffect(()=> {
+/*   useEffect(()=> {
     const consultarAPI = async () => {
       const url = `
       https://newsapi.org/v2/top-headlines?country=${pais}&category=${categoria}&apiKey=0f12cfb058ae49a1a09c023c4adb52d7
       `
       const resultado = await axios.get(url);
-      console.log(resultado.data.articles)
+      setNoticias(resultado.data.articles)
 
     }
     consultarAPI()
-  }, [categoria, pais])
+  }, [categoria, pais]) */
 
- /*  useEffect(()=> {
+  useEffect(()=> {
     const consultarAPI = async () => {
       const url = `
       https://newsapi.org/v2/top-headlines?country=${pais}&category=${categoria}&apiKey=0f12cfb058ae49a1a09c023c4adb52d7
       `
       const respuesta = await fetch(url);
       const noticias = await respuesta.json()
-      console.log(respuesta)
+      setNoticias(noticias.articles)
     }
     consultarAPI()
-  }, [categoria, pais]) */
-
+  }, [categoria, pais])
+  console.log(noticias)
   return (
     <Fragment>
     <Header titulo='Buscador de Noticias' />
@@ -46,6 +47,9 @@ function App() {
       setPais={setPais}
       />
     </div>
+    <ListadoNoticias 
+      noticias={noticias}
+    />
     </Fragment>
   );
 }
