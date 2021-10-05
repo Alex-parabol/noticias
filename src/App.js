@@ -1,15 +1,15 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import Header from './components/header'
 import Form from './components/Form'
-import axios from 'axios'
+/* import axios from 'axios' */
 import ListadoNoticias from './components/Noticias/ListadoNoticias'
 
 function App() {
 
   // definimos categoría y noticias
 
-  const [categoria, setCategoria ] = useState('')
-  const [ pais, setPais ] = useState('')
+  const [categoria, setCategoria ] = useState('us')
+  const [ pais, setPais ] = useState('general')
   const [ noticias, setNoticias ] = useState([])
  
 
@@ -25,6 +25,8 @@ function App() {
     consultarAPI()
   }, [categoria, pais]) */
 
+ 
+
   useEffect(()=> {
     const consultarAPI = async () => {
       const url = `
@@ -32,11 +34,13 @@ function App() {
       `
       const respuesta = await fetch(url);
       const noticias = await respuesta.json()
+      console.log('hi', noticias)
       setNoticias(noticias.articles)
-      console.log(noticias.articles)
     }
     consultarAPI()
-  }, [categoria, pais])
+  }, [categoria,pais])
+
+
   
   return (
     <Fragment>

@@ -4,7 +4,7 @@ export default function Noticias({noticia}) {
     //extraemos datos
     
     const {urlToImage, url, title, description, source } = noticia;
-
+    //si no hay imagen no traerá el alt.
 const imagen = (urlToImage) ?  
 <div className="card-image">
     <img src={urlToImage} alt={title} />
