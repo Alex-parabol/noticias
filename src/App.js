@@ -34,7 +34,6 @@ function App() {
       `
       const respuesta = await fetch(url);
       const noticias = await respuesta.json()
-      console.log('hi', noticias)
       setNoticias(noticias.articles)
     }
     consultarAPI()
